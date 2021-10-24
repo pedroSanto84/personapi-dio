@@ -5,7 +5,6 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-
 public enum PhoneType {
 
     HOME("Home"),
@@ -13,5 +12,4 @@ public enum PhoneType {
     COMMERCIAL("Commercial");
 
     private final String description;
-    
 }

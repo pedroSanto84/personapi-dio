@@ -1,39 +1,28 @@
 package one.digitalinnovation.personapi.dto.response.request;
 
-import java.time.LocalDate;
-import java.util.List;
-
-import org.springframework.validation.annotation.Validated;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import one.digitalinnovation.personapi.entity.Phone;
+import one.digitalinnovation.personapi.enums.PhoneType;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class PersonDTO {
-    
+
     private Long id;
-    
+
+    @Enumerated(EnumType.STRING)
+    private PhoneType type;
+
     @NotEmpty
-    @Size(min = 2, max = 100)
-    private String firtName;
-    
-    @NotEmpty
-    @Size(min = 2, max = 100)
-    private String lastName;
-    
-    @NotEmpty
-    @cpf
-    private String cpf;
-    
-    private LocalDate birthDate;
-    
-    @Valid
-    @NotEmpty
-    private List<Phone> phones;
+    @Size(min = 13, max = 14)
+    private String number;
 }

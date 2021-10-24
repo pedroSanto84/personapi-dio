@@ -19,8 +19,8 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Phone {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,4 +31,6 @@ public class Phone {
 
     @Column(nullable = false)
     private String number;
+
+
 }
